@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Connections Helper</title>
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Ctext y=%22.9em%22 font-size=%2290%22%3E%F0%9F%93%96%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<header>
+  <h1>Connections <span class="sub">Helper</span></h1>
+  <div class="picker">
+    <button id="prev" title="Previous puzzle">‹</button>
+    <input type="date" id="date" aria-label="Puzzle date">
+    <span class="num">#<input type="number" id="num" min="1" aria-label="Puzzle number"></span>
+    <button id="next" title="Next puzzle">›</button>
+    <button id="today">Today</button>
+    <button id="random" title="Random puzzle">🎲</button>
+  </div>
+  <div id="status" class="status"></div>
+</header>
+<main>
+  <p class="intro">Create four groups of four! Tap a tile to select it. Tap the <b>📖</b> corner to see what a word means. Mistakes are unlimited.</p>
+  <div id="solved"></div>
+  <div id="board" class="board"></div>
+  <div id="msg" class="msg" aria-live="polite"></div>
+  <div id="mistakes" class="mistakes"></div>
+  <div class="controls">
+    <button id="shuffle">Shuffle</button>
+    <button id="deselect">Deselect all</button>
+    <button id="submit" class="primary" disabled>Submit</button>
+  </div>
+  <div class="controls secondary">
+    <button id="hintsBtn">💡 Hints</button>
+    <button id="reveal">Reveal answers</button>
+    <button id="restart">Restart</button>
+  </div>
+  <section id="hints" class="hints" hidden></section>
+</main>
+<footer>
+  Puzzles © The New York Times (archive via community GitHub dataset). Definitions: Free Dictionary API, Wiktionary, Wikipedia. Personal learning tool.
+</footer>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-backdrop" data-close></div>
+  <div class="sheet-card" role="dialog" aria-modal="true" aria-labelledby="sheetWord">
+    <button class="sheet-x" data-close aria-label="Close">✕</button>
+    <h2 id="sheetWord"></h2>
+    <div id="sheetBody"></div>
+  </div>
+</div>
+
+<script src="data/puzzles.js"></script>
+<script src="data/hints.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
